@@ -1,0 +1,281 @@
+@import './variables.scss';
+
+.Text-title {
+    font-size: 200%;
+    font-family: $robo, sans serif;
+    font-weight: 500;
+    color: $content-grey;
+}
+
+.Text-large-white {
+  font-family: $robo-con;
+  font-size: 50px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.Text-title-large {
+  font-size: calc(16px + 1.5vw);
+
+    font-family: $robo, sans serif;
+    font-weight: 500;
+    color: $content-grey;
+    line-height: normal;
+}
+
+.Text-title-large-green {
+    font-size: 35px;
+    font-family: $robo, sans serif;
+    color: $green;
+    font-weight: 500;
+}
+
+.Text-robo-900-40px-lime {
+    font-size: calc(16px + 1.5vw);
+    font-family: $robo, sans serif;
+    color: $lime-green;
+    font-weight: 900;
+}
+
+.Text-subtitle {
+    font-size: 20px;
+    font-family: $open, sans serif;
+    font-weight: 400;
+    color: $content-grey;
+}
+
+.Text-small-title {
+    font-size: 24px;
+    font-family: $robo;
+    font-weight: 500;
+    color: $content-grey;
+}
+
+.Text-small-title-black {
+    font-size: 24px;
+    font-family: $robo;
+    font-weight: 500;
+    color: black;
+}
+
+.Text-standard-font {
+    font-size: 16px;
+    font-family: $open;
+    line-height: 24px;
+    color: $content-grey;
+}
+
+.Text-placeHolder {
+  font-size: 16px;
+  font-family: $open;
+  color:$footer-grey
+}
+
+.Text-open-16-icongrey {
+  font-size: 16px;
+  font-family: $open;
+  color: $icon-grey;
+}
+
+.Text-standard-font-small {
+    font-size: 14px;
+    font-family: $open;
+    line-height: 16px;
+    color: $content-grey;
+    margin-bottom: 10px;
+}
+
+.Text-standard-font-sm {
+    font-size: 14px;
+    font-family: $open;
+    line-height: 24px;
+    color: $content-grey;
+}
+
+.Text-standard-font-xsmall {
+    font-size: 12px;
+    font-family: $open;
+    line-height: 24px;
+    color: $content-grey;
+    margin-bottom: 10px;
+}
+
+.Text-open-xsmall {
+  font-size: 12px;
+  font-family: $open;
+  color: $content-grey;
+}
+
+.Text-standard-font-footer {
+    font-size: 16px;
+    font-family: $open;
+    line-height: 24px;
+    color: $footer-grey;
+    margin-bottom: 11px;
+}
+
+.Text-black-robo {
+    font-size: 40px;
+    font-family: $robo;
+    font-weight: 900;
+    letter-spacing: 0.15;
+}
+
+.Text-robo-reg {
+    font-size: 24px;
+    font-family: $robo;
+    letter-spacing: 0.15;
+}
+
+.Text-robo-reg-blue {
+    font-size: 18px;
+    font-family: $robo;
+    letter-spacing: 0.15;
+    font-weight: 400px;
+    color: #3cc5f4;
+}
+
+.Text-robo-reg-small {
+    font-size: 16px;
+    font-family: $robo;
+    letter-spacing: 0.15;
+    color: $footer-grey;
+}
+
+.Text-robo-reg-small-green {
+    font-size: 16px;
+    font-family: $robo;
+    letter-spacing: 0.08;
+    color: $green;
+}
+
+.Text-robo-med {
+    font-size: 24px;
+    font-family: $robo;
+    font-weight: 500;
+    letter-spacing: 0.15;
+}
+
+.Text-robo-med-15-green {
+  font-size: 15px;
+  font-family: $robo;
+  font-weight: 500;
+  letter-spacing: 0.15;
+  color: $button-text-green;
+}
+
+.Text-cat-title {
+    align-self: flex-start;
+    font-size: 18px;
+    font-family: $open;
+    font-weight: 700;
+    color: $content-grey;
+}
+
+.Text-cat-title-2 {
+    font-size: 16px;
+    font-family: $open;
+    font-weight: 700;
+    color: $content-grey;
+    margin: 3px 0px;
+}
+
+.Text-cat-title-2-green {
+    font-size: 16px;
+    font-family: $open;
+    font-weight: 700;
+    color: $green;
+    margin: 3px 0px;
+}
+
+.Text-review {
+  font-family: $robo;
+  font-size: 14px;
+  font-weight: 400;
+  color: #729404;
+}
+
+.Text-account-link {
+  font-family: $robo-con;
+  font-size: 15px;
+  font-weight: 500;
+  color: $header-grey;
+}
+
+.Text-dash-stat {
+  font-family: $robo;
+  font-size: 16px;
+  font-weight: 500;
+  color: $header-grey;
+}
+
+.Text-cancel {
+  font-family: $robo;
+  font-size: 18px;
+  font-weight: 400;
+  color: $icon-grey;
+  opacity: 0.5;
+  cursor:pointer;
+}
+
+.Text-white-robo-reg {
+  font-family: $robo;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+}
+
+.Text-contentGrey-robo-reg-18 {
+  font-family: $robo;
+  font-size: 18px;
+  font-weight: 400;
+  color: $content-grey;
+}
+
+.Text-robo-bold-11-white {
+  font-family: $robo;
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+}
+
+.Text-open-bold-22 {
+  font-family: $open;
+  font-size: 22px;
+  font-weight: 700;
+  color: $content-grey;
+  line-height: 1.64;
+}
+
+.Text-open-light-22 {
+  font-family: $open;
+  font-size: calc(14px + .5vw);;
+  font-weight: 300;
+  color: $content-grey;
+  line-height: 1.64;
+}
+
+.Text-robo-con-light-50 {
+  font-family: $robo-con;
+  font-size: calc(18px + 2vw);
+  color: $content-grey;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.Text-robo-black-50-lime-green {
+  font-family: $robo;
+  font-size: calc(18px + 2vw);
+  font-weight: 900;
+  color: $lime-green;
+}
+
+.Text-robo-bold-18-green {
+  font-family: $robo;
+  font-size: 18px;
+  font-weight: 700;
+  color: #546810;
+
+}
