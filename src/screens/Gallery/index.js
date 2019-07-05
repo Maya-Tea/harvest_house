@@ -35,11 +35,7 @@ export default class WhatWeDo extends Component {
     }
 
     componentDidMount = async() => {
-        async
-    }
-
-    callApi = async() => {
-
+        //  async
     }
 
     render() {

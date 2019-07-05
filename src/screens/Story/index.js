@@ -16,6 +16,8 @@ export default class Story extends Component {
     render() {
         return (
             <div className="App-body">
+                <img src="https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg" />
+                <img style={{width:"100%"}} src="https://farm66.staticflickr.com/65535/48157199461_4562908771.jpg" />
                 <h3>Porsche had the vision and Ryan had a plan. </h3>
                 <img src={ story1 } className="Story-image" />
                 <h3>With the help of friends they created Harvest House Creation Space, a non-for-profit DIY art house in the heart of North Springfield. </h3>
