@@ -40,9 +40,8 @@ export default class WhatWeDo extends Component {
 
     render() {
         return (
-            <div className="App-body">
-                <h2>Home</h2>
-                <button onClick={this.callApi}>Call API</button>
+            <div className="App-body" style={{height: "100vh", padding:"10%"}} >
+                <h2>Gallery</h2>
                 <Gallery images={IMAGES}/>
             </div>
         );

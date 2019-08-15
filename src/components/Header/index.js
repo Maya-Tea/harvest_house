@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../../App.scss";
 import cloud from "./cloud.jpg";
 import redPaper from "../../assets/images/redPaper.jpg";
+import glitterPaper from "../../images/glitterPaper.jpg";
 
 class Header extends Component {
     constructor(props) {
@@ -33,19 +34,19 @@ class Header extends Component {
         const { viewportWidth, viewportHeight } = this.state;
         return (
             <div className="container">
-                <div className="header-container" style={{width:viewportWidth, height:viewportHeight}}>
+                <div className="header-container" style={{width:viewportWidth, height: viewportWidth*0.5}}>
                     <svg id="barn-svg" className="draw-svg" width={viewportWidth} height={viewportWidth*0.5} viewBox="0 0 228 151">
                         <defs>
                             <pattern id="barn-pattern" x="0" y="0" width="2" height="2">
                                 <image
-                                    width="230"
+                                    width="228"
                                     height="151"
                                     href={redPaper}
                                 />
                             </pattern>
-                            <filter id="barn-shadow" x="0" y="0" width="200%" height="200%">
-                                <feOffset result="offOut" in="SourceAlpha" dx="0" dy="0" />
-                                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+                            <filter id="barn-shadow" x="0" y="0" width="150%" height="150%" style={{}}>
+                                <feOffset result="offOut" in="SourceAlpha" dx="10" dy="3" />
+                                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="4" />
                                 <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
                             </filter>
                         </defs>
@@ -59,7 +60,7 @@ class Header extends Component {
                         width={viewportWidth*0.4}
                         id="cloud-svg"
                         version="1.1"
-                        className="draw-svg"
+                        className="draw-svg-cloud"
                         viewBox="0 0 230 98.999992"
                     >
                         <defs>
@@ -70,9 +71,9 @@ class Header extends Component {
                                     href={cloud}
                                 />
                             </pattern>
-                            <filter id="cloud-shadow" x="0" y="0" width="200%" height="100%">
-                                <feOffset result="offOut" in="SourceAlpha" dx="0" dy="0" />
-                                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="100" />
+                            <filter id="cloud-shadow" x="0" y="0" width="110%" height="130%">
+                                <feOffset result="offOut" in="SourceAlpha" dx="5" dy="5" />
+                                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="4" />
                                 <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
                             </filter>
                         </defs>
@@ -82,7 +83,7 @@ class Header extends Component {
                             strokeWidth="1"
                             fill="white"
                             filter="url(#cloud-shadow)"
-                            className="draw-path"
+                            className="draw-path-cloud"
                             id="cloud-svg"
                             d="m 150,0 -13,4 1,3 -1,0 -3,5 -6,-1 -2,-5 -7,-3 -7,2 -7,8 c 1.33334,2.666667 0.66667,3.666667 -2,3 l -6.000005,6 0,4 c 0,2 1.66667,2.666667 5.000005,2 l 1,0 -1,3 -4.000005,2 -5,-3 -1,-4 -3.000001,-3 -10.99999,-2 -4,-3 -4,1 -2,0 -3,3 -13,-5 -5,0 L 40,21 l 1,5 -1,2 1,7 -2,0 1,2 -1,0 c -2.71151,-5.691933 -3.490922,0.478817 -5,4 l -3,0 -5,-4 -10,6 1,4 -3,-1 c -2.666667,1.333333 -3.333333,4.333333 -2,9 l 4,2 -1,3 c -2.666667,-0.666667 -3.666667,0 -3,2 L 9,63 4,63 C 4,61 2.666667,60.333333 0,61 l 1,6 9,1 1,3 10,3 4,5.000005 0,1.99999 5,3 2,-1 c 8.853693,1.959895 8.411604,-1.024502 11.000004,-2 1.33333,0.66667 1.66666,0.33333 1,-1 0.66666,-1.99999 2.33333,-2.66666 5,-1.99999 l 1,-4.000005 5,1 c 1.33333,0.666665 1.66666,2.333335 1,4.999995 3.33333,0.66667 5.33333,0.33333 6,-0.99999 l -1,-2 1,-8.000005 0,-2 3,-5 5,0 6,5 c 1.33333,3.333333 0.66666,4.666667 -2,4 l -4,4 c 2,0.666665 1.66666,1.666665 -1,3.000005 l 3,3.99999 7,5 c 0.66666,1.33333 0,1.66667 -2,1 -0.596879,3.800717 4.517775,1.354604 7,1 l 3.99999,8 7.000001,2 9.000005,-1 5,-4 1,0 0,-4 -3,1 -3,-2 -2,-2 c -0.66666,-2 -1.33334,-2.33333 -2.000005,-1 l -1,-2 3.000005,1 1,-1 9,0 2,0 2,-1 5,1 2,0 8,4 c 6.66667,1.33333 11.66667,0.33333 15,-3 l 17,0 7,4 3,-1 -2,-8.99999 3,-3 7,0 L 190,73 c 0.66667,1.333333 1.66667,1 3,-1 3.33333,-0.666667 5.66667,-0.333333 7,1 l 4,-1 c 1.33333,-2.666667 2.66667,-2.666667 4,0 l 6,-3 2,-3 2,1 3,0 -1,-4 4,1 3,-1 3,1 0,-3 c -0.66667,-2 -1.33333,-2.333333 -2,-1 -4.2064,-9.520415 -7.95984,-6.007739 -5,-6 l -2,3 c -3.33333,0.666667 -5.33333,0 -6,-2 l -2,-3 -4,-5 -1,1 -2,-2 -7,-2 c -2.66667,0.666667 -3.66667,0.333333 -3,-1 l -4,-5 -2,0 c -1.33333,-2.666667 -2.33333,-3 -3,-1 l -6,-2 -5,1 -5,-2 1,-2 c 0.66667,-2 0.33333,-2.666667 -1,-2 -4,-1.333333 -5.66667,-4.666667 -5,-10 l -4,-4 c 2,-1.333333 2.66667,-3 2,-5 l -9,-3 -1,-3 1,-2 -2,-2 z m -16,10 0,1 z m -40.000005,15 0,1 z m 1,1 0,1 z M 222,65 l 0,1 z"
                         />
@@ -115,7 +116,6 @@ class Header extends Component {
         </svg> */}
 
                 </div>
-                <div style={{backgroundColor:"green", height:40}}></div>
             </div>
         );
     }

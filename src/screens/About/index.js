@@ -10,8 +10,8 @@ export default class About extends Component {
 
     render() {
         return (
-            <div className="App-body">
-                <h2>About</h2>
+            <div className="App-body" style={{height: "100vh", padding:"10%"}} >
+                <h2>About (BOARD MEMBERS)</h2>
             </div>
         );
     }

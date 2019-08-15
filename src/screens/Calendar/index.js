@@ -10,7 +10,7 @@ export default class Calendar extends Component {
 
     render() {
         return (
-            <div className="App-body">
+            <div className="App-body" style={{height: "100vh", padding:"10%"}} >
                 <h2>Calendar</h2>
             </div>
         );

@@ -44,6 +44,8 @@ import {
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.scss";
 import logo from "./images/logo.png";
+import clouds from "./images/clouds.jpg";
+import cloudsmash from "./images/cloudsmedly.png";
 
 import Home from "./screens/Home";
 import About from "./screens/About";
@@ -86,10 +88,14 @@ class App extends Component {
     componentDidMount() {
         this.updateWindowDimensions();
         window.addEventListener("resize", this.updateWindowDimensions);
+        window.addEventListener('scroll', this.handleScroll);
+
     }
 
     componentWillUnmount() {
         window.removeEventListener("resize", this.updateWindowDimensions);
+        window.removeEventListener('scroll', this.handleScroll);
+
     }
 
     updateWindowDimensions() {
@@ -130,7 +136,7 @@ class App extends Component {
                             <img src={ logo } className="Header-app-logo" alt="logo" />
                             <div className="Footer-social-div">
                                 <a href="https://www.facebook.com/417HarvestHouse/" target="_blank" ><FontAwesomeIcon icon={faFacebookSquare} className="Footer-social-icon"  /></a>
-                                <a href="https://www.instagram.com/heliponix/" target="_blank" ><FontAwesomeIcon icon={faInstagram} className="Footer-social-icon"  /></a>
+                                <a href="https://www.instagram.com/harvesthouse417/?hl=en" target="_blank" ><FontAwesomeIcon icon={faInstagram} className="Footer-social-icon"  /></a>
                                 <a href="https://twitter.com/heliponix" target="_blank" ><FontAwesomeIcon icon={faTwitter} className="Footer-social-icon"  /></a>
                             </div>
                         </div>
@@ -166,48 +172,58 @@ class App extends Component {
 
     header = () => {
         return (
-            <div className = "Header">
-                <Link className="Header-logo-div" to="/">
-                    <img src={ logo } className="Header-app-logo" alt="logo" onClick={()=>this.setState({isOpen: false})}  />
-                </Link>
-                {this.state.width <= 825 &&
-                <div className="Header-hamburger-div">
-                    <button onClick={this.toggle} className="Header-hamburger-button">
-                        <FontAwesomeIcon icon={faBars} className="Header-hamburger-icon"  />
-                    </button>
-                </div>
-                }
-                {this.state.width > 825 &&
-                <div className = "Nav-row">
-                    <div className= "Header-tabs-container">
-                        <NavLink exact={true} activeClassName="Header-active-tab" className="Header-link" to='/story'>
-                            <div className="Header-tab">
-                                <p>OUR STORY</p>
-                            </div>
-                        </NavLink>
-                        <NavLink exact={true} activeClassName="Header-active-tab" className="Header-link" to='/calendar'>
-                            <div className="Header-tab">
-                                <p>CALENDAR</p>
-                            </div>
-                        </NavLink>
-                        <NavLink exact={true} activeClassName="Header-active-tab" className="Header-link" to='/gallery'>
-                            <div className="Header-tab">
-                                <p>WHAT WE DO</p>
-                            </div>
-                        </NavLink>
-                        <NavLink exact={true} activeClassName="Header-active-tab" className="Header-link" to='/board'>
-                            <div className="Header-tab">
-                                <p>WHO WE ARE</p>
-                            </div>
-                        </NavLink>
+            <div className = "Header" ref={e => this.headerRef = e}>
+                {/* <img src={ clouds } style= {{ height:1000}} alt="logo" onClick={()=>this.setState({isOpen: false})}  /> */}
+                <img src={ cloudsmash } style= {{ width:"100vw", position:"absolute", top:0}} alt="logo" onClick={()=>this.setState({isOpen: false})}  />
+
+                <div style={{position: "fixed", display: "flex", width:"90%", marginHorizontal:"5%"}}>
+                    <Link className="Header-logo-div" to="/">
+                        <img src={ logo } className="Header-app-logo" alt="logo" onClick={()=>this.setState({isOpen: false})}  />
+                    </Link>
+
+                    {this.state.width <= 825 &&
+                    <div className="Header-hamburger-div">
+                        <button onClick={this.toggle} className="Header-hamburger-button">
+                            <FontAwesomeIcon icon={faBars} className="Header-hamburger-icon"  />
+                        </button>
                     </div>
+                    }
+                    {this.state.width > 825 &&
+                    <div className = "Nav-row">
+                        <div className= "Header-tabs-container">
+                            <NavLink exact={true} activeClassName="Header-active-tab" className="Header-link" to='/story'>
+                                <p>OUR STORY</p>
+                            </NavLink>
+                            <NavLink exact={true} activeClassName="Header-active-tab" className="Header-link" to='/calendar'>
+                                <p>CALENDAR</p>
+                            </NavLink>
+                            <NavLink exact={true} activeClassName="Header-active-tab" className="Header-link" to='/gallery'>
+                                <p>WHAT WE DO</p>
+                            </NavLink>
+                            <NavLink exact={true} activeClassName="Header-active-tab" className="Header-link" to='/board'>
+                                <p>WHO WE ARE</p>
+                            </NavLink>
+                        </div>
+                    </div>
+                    }
                 </div>
-                }
             </div>
         )
     }
 
+    getScroll = () => {
+        //console.log(this.appbody.scrollY);
+        console.log(window.scrollY);
+        //window.scrollTo(0, 300);
+        this.headerRef.scrollTo(0,window.scrollY);
+    }
+
+    handleScroll = () => {
+        this.headerRef.scrollTo(0,window.scrollY);
+    }
+
     render() {
+        //console.log(this.appbody.scrollTop());
         return (
             <div>
                 <Router>
@@ -229,7 +245,7 @@ class App extends Component {
                                 </NavLink>
 
                             </div>
-                            <div className="App-body">
+                            <div className="App-body" ref={e => this.appbody = e}>
                                 <Route exact path="/" component={ Home } />
 
                                 <Route path="/board" render={(props) => <Board {...props} width={this.state.width} />} />

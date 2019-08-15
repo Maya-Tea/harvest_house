@@ -10,8 +10,8 @@ export default class FAQS extends Component {
 
     render() {
         return (
-            <div className="App-body">
-                <h2>FAQS</h2>
+            <div className="App-body" style={{height: "100vh", padding:"10%"}} >
+                <h2>FAQs</h2>
             </div>
         );
     }
