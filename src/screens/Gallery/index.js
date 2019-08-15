@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Gallery from 'react-grid-gallery';
 
+import torn1 from "./torn1.png";
+
 const IMAGES =
 [{
     src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
@@ -12,8 +14,8 @@ const IMAGES =
     caption: "After Rain (Jeshu John - designerspics.com)"
 },
 {
-    src: "https://farm66.staticflickr.com/65535/48157199461_4562908771.jpg",
-    thumbnail: "https://farm66.staticflickr.com/65535/48157199461_4562908771.jpg",
+    src: torn1,
+    thumbnail: torn1,
     thumbnailWidth: 320,
     thumbnailHeight: 212,
     //tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],

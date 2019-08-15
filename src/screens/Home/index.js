@@ -18,8 +18,8 @@ export default class Home extends Component {
         return (
             <div>
                 <Header />
-                <img src={cool} style={{width:"100%", height:"auto"}}/>
                 <img src={modelHH} style={{width:"100%", height:"auto"}}/>
+                <img src={cool} style={{width:"100%", height:"auto"}}/>
             </div>
         );
     }
